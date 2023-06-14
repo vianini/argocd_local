@@ -4,7 +4,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: release-name-postgresql
-  namespace: "default"
+  namespace: "airflow"
   labels:
     app.kubernetes.io/name: postgresql
     helm.sh/chart: postgresql-12.1.9

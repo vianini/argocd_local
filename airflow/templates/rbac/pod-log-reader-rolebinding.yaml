@@ -23,7 +23,7 @@
 kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  namespace: "default"
+  namespace: "airflow"
   name: release-name-pod-log-reader-rolebinding
   labels:
     tier: airflow
@@ -37,7 +37,7 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: release-name-airflow-webserver
-    namespace: "default"
+    namespace: "airflow"
   - kind: ServiceAccount
     name: release-name-airflow-triggerer
-    namespace: "default"
+    namespace: "airflow"
