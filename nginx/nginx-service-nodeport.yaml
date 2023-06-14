@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: nginx-svc-nodeport
 spec:
-  selector: # seletor para identificar os pods/deployment que esse svc irá expor
+  selector:
     app: nginx
   type: NodePort
   ports:
