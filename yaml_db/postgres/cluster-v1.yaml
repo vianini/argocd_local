@@ -1,5 +1,8 @@
 apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
+metadata:
+  name: cluster-v1
+  namespace: postgres-cluster-native
 spec:
   affinity:
     podAntiAffinityType: preferred
