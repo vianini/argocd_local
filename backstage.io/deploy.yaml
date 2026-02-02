@@ -29,9 +29,6 @@ spec:
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
-  hostPath:
-    path: '/mnt/data'
-    type: DirectoryOrCreate
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
