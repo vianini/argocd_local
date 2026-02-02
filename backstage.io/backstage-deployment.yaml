@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: backstage
-          image: your‑registry/backstage:latest    # ajuste aqui
+          image: backstage:latest    # ajuste aqui
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
