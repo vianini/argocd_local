@@ -1,0 +1,41 @@
+# kubernetes/postgres-secrets.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: postgres-secrets
+  namespace: backstage
+type: Opaque
+data:
+  POSTGRES_USER: backstage
+  POSTGRES_PASSWORD: q1w2e3r4
+---
+# kubernetes/postgres-storage.yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: postgres-storage
+  namespace: backstageio
+  labels:
+    type: local
+spec:
+  storageClassName: expandable-local
+  capacity:
+    storage: 2G
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  hostPath:
+    path: '/mnt/data'
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgres-storage-claim
+  namespace: backstageio
+spec:
+  storageClassName: expandable-local
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2G
